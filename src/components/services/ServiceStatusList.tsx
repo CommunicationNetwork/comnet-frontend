@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ServiceStatusItem extends Component {
+class ServiceStatusList extends Component {
 
     render() {
         return (
@@ -10,3 +10,5 @@ class ServiceStatusItem extends Component {
         );
     }
 }
+
+export default ServiceStatusList
