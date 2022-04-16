@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Typography } from '@mui/material';
+import { Chip } from '@mui/material';
 
 interface ServiceStatusItemProps {
     name: String;
@@ -10,18 +10,14 @@ class ServiceStatusItem extends Component<ServiceStatusItemProps> {
 
     render() {
         return (
-            <>
-                {this.props.online &&
-                    <Typography>
-                        {this.props.name}: Active
-                    </Typography>
-                }
-                {!this.props.online &&
-                    <Typography>
-                        {this.props.name}: Inactive
-                    </Typography>
-                }
-            </>
+                <>
+                    {this.props.online &&
+                        <Chip label={this.props.name} color="success" />
+                    }
+                    {!this.props.online &&
+                        <Chip label={this.props.name} color="error" />
+                    }
+                </>
         );
     }
 }

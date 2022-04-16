@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
-import { Box, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+import { Box, createTheme, CssBaseline, Link, ThemeProvider } from '@mui/material';
 
 const theme = createTheme({
-
+    typography: {
+        fontFamily: 'Plus Jakarta Sans'
+    },
+    palette: {
+        error: {
+            main: '#ff0033'
+        },
+        success: {
+            main: '#00ffa2'
+        }
+    }
 });
 
 interface CustomThemeProviderProps {
@@ -14,6 +24,7 @@ class CustomThemeProvider extends Component<CustomThemeProviderProps> {
         return (
             <ThemeProvider theme={theme}>
                 <CssBaseline />
+                <Link href={"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"} rel={"stylesheet"} />
                 <Box sx={{
                     position: 'fixed',
                     top: 0,
@@ -25,7 +36,6 @@ class CustomThemeProvider extends Component<CustomThemeProviderProps> {
                     alignItems: 'center',
                     flexDirection: 'column',
                     gap: '2%',
-                    backgroundColor: '#FFFAFA'
                 }}>
                     {this.props.children}
                 </Box>

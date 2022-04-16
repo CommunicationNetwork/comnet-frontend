@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Divider, Grid, Paper, Typography } from '@mui/material';
+import { Box, Divider, Grid, Paper, Typography } from '@mui/material';
 import TelemetryStatusList from './telemetry/TelemetryStatusList';
 import ServiceStatusList from './services/ServiceStatusList';
 
@@ -13,20 +13,21 @@ class Dashboard extends Component {
               </Typography>
               <Paper
                   elevation={3}
+                  component={Grid}
                   sx={{
                       height: '40%',
                       width: '40%',
                   }}
+                  container
               >
-                  <Grid container>
-                      <Grid item sx={{width:'70%'}}>
-                          <TelemetryStatusList />
-                      </Grid>
+                      <Grid item xs={8}></Grid>
                       <Divider orientation={"vertical"} variant={"middle"} flexItem />
-                      <Grid item>
-                          <ServiceStatusList />
+                      <Grid textAlign={"center"} item xs={3.9}>
+                          <Typography marginTop={3} variant={"h5"}>Service Status</Typography>
+                          <Box marginTop={3} display={"flex"} justifyContent={"center"}>
+                              <ServiceStatusList />
+                          </Box>
                       </Grid>
-                  </Grid>
               </Paper>
             </>
         );
