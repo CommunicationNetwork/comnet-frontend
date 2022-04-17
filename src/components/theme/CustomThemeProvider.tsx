@@ -7,10 +7,10 @@ const theme = createTheme({
     },
     palette: {
         error: {
-            main: '#ff0033'
+            main: '#D41111' //#ff0033
         },
         success: {
-            main: '#00ffa2'
+            main: '#86D957' //00ffa2
         }
     }
 });
