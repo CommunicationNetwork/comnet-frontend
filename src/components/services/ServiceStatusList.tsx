@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ServiceStatusResponse from '../../api/services/ServiceStatusModels';
-import ServicesAPI from '../../api/services/ServicesAPI';
+import ServiceStatusResponse from '../../model/ServicesModel';
+import ServicesService from '../../api/services/ServicesService';
 import ServiceStatusItem from './ServiceStatusItem';
 import { Stack } from '@mui/material';
 
@@ -23,11 +23,14 @@ class ServiceStatusList extends Component<any, SerivceStatusListState> {
     }
 
     async componentDidMount() {
+        this.setState({
+            serviceStatus: await ServicesService.getServiceStatus()
+        });
         setInterval(async () => {
             this.setState({
-                serviceStatus: await ServicesAPI.getServiceStatus()
+                serviceStatus: await ServicesService.getServiceStatus()
             });
-        }, 10000);
+        }, 5000);
     }
 
     render() {
