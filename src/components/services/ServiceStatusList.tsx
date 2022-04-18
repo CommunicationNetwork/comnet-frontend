@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Stack } from '@mui/material';
-import ServiceStatusItem from 'components/services/ServiceStatusItem';
 import ServicesService from 'api/services/ServicesService';
+import ServiceStatusItem from 'components/services/ServiceStatusItem';
 import ServiceStatusResponse from 'model/ServicesModel';
 
 interface SerivceStatusListState {

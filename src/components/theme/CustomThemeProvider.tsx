@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, createTheme, CssBaseline, Link, ThemeProvider } from '@mui/material';
+import { Box, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 
 const theme = createTheme({
     typography: {
@@ -24,7 +24,6 @@ class CustomThemeProvider extends Component<CustomThemeProviderProps> {
         return (
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <Link href={"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"} rel={"stylesheet"} />
                 <Box sx={{
                     position: 'fixed',
                     top: 0,
