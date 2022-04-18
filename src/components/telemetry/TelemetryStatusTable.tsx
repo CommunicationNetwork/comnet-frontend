@@ -25,7 +25,7 @@ class TelemetryStatusTable extends Component<any, TelemetryStatusTableState> {
         const webSocket = new WebSocket('ws://localhost:8080/telemetry');
         webSocket.onmessage = (message) => {
             this.setState({
-                telemetryData: message.data as TelemetryResponse
+                telemetryData: JSON.parse(message.data) as TelemetryResponse
             })
         }
     }
