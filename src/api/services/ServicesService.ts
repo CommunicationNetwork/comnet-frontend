@@ -1,11 +1,14 @@
-import ServiceStatusResponse from '../../model/ServicesModel';
 import { axiosInstance } from '../AxiosInstance';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
+import ServiceStatusResponse from 'model/ServicesModel';
 
 class ServicesService {
     getServiceStatus(): Observable<ServiceStatusResponse> {
         return axiosInstance.get<ServiceStatusResponse>('/service/status').pipe(
-            map(res => res.data)
+            map(res => res.data),
+            catchError(() => {
+                return of({backend: false, proxy: false, flightComputer: false})
+            })
         );
     }
 }

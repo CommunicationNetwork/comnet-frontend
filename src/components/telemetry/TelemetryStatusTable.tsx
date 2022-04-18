@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
-import TelemetryResponse from '../../model/TelemetryModel';
+import TelemetryResponse from 'model/TelemetryModel';
 
 
 interface TelemetryStatusTableState {

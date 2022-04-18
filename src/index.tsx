@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Dashboard from './components/Dashboard';
-import CustomThemeProvider from './components/theme/CustomThemeProvider';
-import './index.css';
+import 'index.css'
+import CustomThemeProvider from 'components/theme/CustomThemeProvider';
+import Dashboard from 'components/Dashboard';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
