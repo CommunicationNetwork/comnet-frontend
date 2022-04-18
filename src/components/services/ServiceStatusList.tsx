@@ -13,22 +13,25 @@ class ServiceStatusList extends Component<any, SerivceStatusListState> {
     constructor(props: any) {
         super(props)
         this.state = {
-                serviceStatus: {
-                    backend: false,
-                    proxy: false,
-                    flightComputer: false
-                }
+            serviceStatus: {
+                backend: false,
+                proxy: false,
+                flightComputer: false
+            }
         }
-
     }
 
-    async componentDidMount() {
-        this.setState({
-            serviceStatus: await ServicesService.getServiceStatus()
-        });
-        setInterval(async () => {
+    componentDidMount() {
+        ServicesService.getServiceStatus().subscribe(response => {
             this.setState({
-                serviceStatus: await ServicesService.getServiceStatus()
+                serviceStatus: response
+            })
+        });
+        setInterval(() => {
+            ServicesService.getServiceStatus().subscribe(response => {
+                this.setState({
+                    serviceStatus: response
+                })
             });
         }, 5000);
     }

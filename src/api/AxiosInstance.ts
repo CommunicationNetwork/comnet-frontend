@@ -1,6 +1,6 @@
-import axios from "axios";
+import { Axios } from 'axios-observable';
 
-const axiosInstance = axios.create({
+const axiosInstance = Axios.create({
     baseURL: 'http://localhost:8080/'
 });
 
