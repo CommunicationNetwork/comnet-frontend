@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css'
+import './css/fonts/fonts.css'
 import CustomThemeProvider from './components/theme/CustomThemeProvider';
 import Dashboard from 'components/Dashboard';
 
