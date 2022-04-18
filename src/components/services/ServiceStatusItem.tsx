@@ -15,7 +15,7 @@ class ServiceStatusItem extends Component<ServiceStatusItemProps> {
                         <Chip label={this.props.name} color="success" />
                     }
                     {!this.props.online &&
-                        <Chip label={this.props.name} color="error" />
+                        <Chip label={this.props.name} />
                     }
                 </>
         );
