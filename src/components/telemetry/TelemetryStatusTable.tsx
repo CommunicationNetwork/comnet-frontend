@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import TelemetryResponse from 'model/TelemetryModel';
+import Config from 'Config';
 
 
 interface TelemetryStatusTableState {
@@ -26,7 +27,7 @@ class TelemetryStatusTable extends Component<any, TelemetryStatusTableState> {
     }
 
     connect() {
-        let webSocket: WebSocket = new WebSocket('ws://localhost:8080/telemetry');
+        let webSocket: WebSocket = new WebSocket(Config.webSocketBaseUrl + '/telemetry');
         webSocket.onmessage = (message) => {
             this.setState({
                 telemetryData: JSON.parse(message.data) as TelemetryResponse
