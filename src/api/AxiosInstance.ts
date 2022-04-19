@@ -1,7 +1,7 @@
 import { Axios } from 'axios-observable';
 
 const axiosInstance = Axios.create({
-    baseURL: 'http://localhost:8080/'
+    baseURL: 'http://' + process.env.REACT_APP_BACKEND_HOST + ':' + process.env.REACT_APP_BACKEND_PORT + '/'
 });
 
 export {
